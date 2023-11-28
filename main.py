@@ -54,18 +54,6 @@ instruments = [
     pygame.mixer.Sound(os.path.join('samples', f)) for f in instrument_files
 ]
 
-pygame.draw.rect(screen, BUTTON_BG, pygame.Rect(253, 8, 400, 35 + 18*len(instrument_files)))
-screen.blit(
-    option_font.render('Instruments', False, '#ffffff'),
-    (260, 12)
-)
-for i in range(len(instrument_files)) :
-    screen.blit(
-        cell_font.render(f'{i} | {instrument_files[i]}', False, '#ffffff'),
-        (275, 35 + 18*i)
-    )
-
-
 # Initialize playing and countdown
 playing = [False for col in cell_array]
 countdown = TPC
@@ -110,6 +98,18 @@ while True :
     screen.blit(
         cell_font.render(editables[currently_editing], False, '#ffffff'), (740, 15)
     )
+
+    # Update File List
+    pygame.draw.rect(screen, BUTTON_BG, pygame.Rect(253, 8, 400, 35 + 18*len(instrument_files)))
+    screen.blit(
+        option_font.render('Instruments', False, '#ffffff'),
+        (260, 12)
+    )
+    for i in range(len(instrument_files)) :
+        screen.blit(
+            cell_font.render(f'{i:3} | {instrument_files[i]}', False, '#ffffff'),
+            (275, 35 + 18*i)
+        )
 
     # Countdown events: 
     # - if the countdown is zero, advance all the columns and reset the timer
