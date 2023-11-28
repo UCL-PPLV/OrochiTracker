@@ -2,7 +2,7 @@
  
 Not much here yet! The file you should run is ``main.py``. 
 
-##Controls
+## Controls
 - Arrow Keys: Move the cursor around.
 - Shift + Up/Down Arrow Key: Change the value of the parameter being edited
 - Shift + Left/Right Arrow Key: Change the Parameter being edited
